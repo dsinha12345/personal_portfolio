@@ -3,6 +3,9 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,36 +14,37 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Corneal Pathological Classifier",
+      description: "Image Classification using CNN and ResNet50",
+      imgUrl: projImg1, 
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "StylePitch",
+      description: "Fashion Design App connecting designers and companies",
+      imgUrl: projImg2, 
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Modi Script Character Recognition",
+      description: "AI Model for Modi Script Character Recognition",
+      imgUrl: projImg3, 
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Soccer Prediction App",
+      description: "Prediction Software using Flask and TensorFlow",
+      imgUrl: projImg4, 
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "RNAseq Analysis",
+      description: "Data Analysis for Gene Sequencing using Python and R",
+      imgUrl: projImg5, 
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "BeeSafeAI",
+      description: "A secure web application for password management, featuring a password generator powered by generative AI and built using Django, HTML, and CSS.",
+      imgUrl: projImg6,
     },
   ];
+  
 
   return (
     <section className="project" id="projects">
