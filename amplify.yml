@@ -3,15 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd personal-portfolio/personal-portfolio
+        - cd personal-portfolio
         - npm install
     build:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: personal-portfolio/personal-portfolio/build
+    baseDirectory: personal-portfolio/build
     files:
       - '**/*'
   cache:
     paths:
-      - personal-portfolio/personal-portfolio/node_modules/**/*
+      - personal-portfolio/node_modules/**/*
