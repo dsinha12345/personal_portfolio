@@ -59,8 +59,11 @@ export const Banner = () => {
               <span className="tagline crazy-effect">Welcome to my Portfolio</span>
               <h1>{`Hi! I'm Devansh`}</h1>
               <h2><span className="txt-rotate" dataPeriod="1000" data-rotate='[  "AI Engineer", "Data Scientist", "Web Developer", "Software Engineer" ]'><span className="wrap">{text}</span></span></h2>
-              <p>I am Devansh, a passionate AI Engineer, Data Scientist, and Software Developer with a strong background in deep learning, computer vision, and web development. With a history of working on impactful projects like BeeSafeAI and corneal pathology classification, I specialize in leveraging technology to solve complex problems. My journey reflects a dedication to continuous learning and innovation, whether it's designing secure web applications or advancing AI solutions in healthcare.</p>
+              <p>I am Devansh, a passionate AI Engineer, Data Scientist, and Software Developer with a strong background in deep learning, computer vision, and web development.</p>
+              <p> In my free time, I enjoy traveling, hiking, reading tech blogs, try new recipes, play badminton and editing photos and videos. </p>
+              <a href = "#connect">
               <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+              </a>
             </div>
           }
         </TrackVisibility>
