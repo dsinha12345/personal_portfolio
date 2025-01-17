@@ -243,7 +243,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
@@ -615,4 +614,33 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+.circle-img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.rounded-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 20%;
+  object-fit: cover;
+}
+.crazy-effect {
+  background-color: #1e89af3d; /* Yellow background color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  display: inline-block;
+  animation: crazyEffect 2s infinite;
+}
+
+@keyframes crazyEffect {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
 }
