@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { Container, Row, Col, Tab, Nav, Modal, Button } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
@@ -21,6 +21,15 @@ import TrackVisibility from 'react-on-screen';
 export const Projects = () => {
 
   const [activeTab, setActiveTab] = useState("first");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShow = (project) => {
+    console.log("Selected Project", project);
+    setSelectedProject(project);
+    setShowModal(true);
+  };
+  const handleClose = () => setShowModal(false);
 
   const projects = [
     {
@@ -104,6 +113,18 @@ export const Projects = () => {
     },
   ];
 
+  const modalStyles = {
+    content: {
+      color: '#333', // Dark text color for content
+    },
+    title: {
+      color: '#000', // Black text color for title
+    },
+    description: {
+      color: '#444', // Slightly lighter text color for description
+    },
+  };
+
   const renderContent = () => {
     switch (activeTab) {
       case "first":
@@ -162,6 +183,7 @@ export const Projects = () => {
                                 <ProjectCard
                                   key={index}
                                   {...project}
+                                  onClick={() => handleShow(project)}
                                 />
                               )
                             })
@@ -204,6 +226,57 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
+      <Modal 
+        show={showModal} 
+        onHide={handleClose} 
+        centered
+        size="lg"
+        className="project-modal"
+      >
+        <Modal.Header closeButton style={modalStyles.content}>
+          <Modal.Title className="fs-4" style={modalStyles.title}>
+            {selectedProject?.title}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={modalStyles.content}>
+          {selectedProject && (
+            <div className="project-modal-content">
+              <div className="text-center mb-4">
+                <img 
+                  src={selectedProject.imgUrl} 
+                  alt={selectedProject.title} 
+                  className="img-fluid rounded"
+                  style={{ maxHeight: '300px', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="project-details">
+                <h5 className="mb-3" style={modalStyles.title}>Description</h5>
+                <p className="mb-4" style={modalStyles.description}>
+                  {selectedProject.description}
+                </p>
+                {selectedProject.link && (
+                  <div className="text-center">
+                    <a 
+                      href={selectedProject.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="btn btn-primary"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </Modal.Body>
+        <Modal.Footer style={modalStyles.content}>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </section>
   );
 };

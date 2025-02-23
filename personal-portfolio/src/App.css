@@ -536,6 +536,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact form button:hover::before {
   width: 100%;
 }
+.project-card {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.zoom-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:active .zoom-effect {
+  transform: scale(1.2);
+}
 
 /************ Footer Css ************/
 .footer {
